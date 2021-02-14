@@ -39,12 +39,8 @@
 }
 
 .nav-text {
-  /* display: flex; */
-  /* justify-content: start; */
-  /* align-items: center; */
   padding: 8px 0px 8px 16px;
   list-style: none;
-  /* height: 60px; */
 }
 
 .nav-text a {
@@ -87,8 +83,13 @@ span {
   align-items: flex-end;
 }
 
-a.active span svg {
-  transform: scaleY(-1);
+li.active a span svg {
+  transform: rotate(-180deg);
+  transition: .4s;
+}
+
+li a span svg {
+  transform: rotate(0deg);
   transition: .4s;
 }
 
@@ -108,7 +109,12 @@ li.have-children, li {
   _display: none;
 }
 li.have-children.active > ul {
-  max-height: 300px;
+  max-height: 250px;
+  overflow-y: auto;
   opacity: 1;
   _display: block;
+}
+
+li.have-children li a {
+  font-size: 16px;
 }

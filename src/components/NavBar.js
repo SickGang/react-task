@@ -1,14 +1,23 @@
 import React, { useState } from "react";
+import { SidebarData } from "./SidebarData";
 import * as FaIcons from "react-icons/fa";
 import * as AiIcons from "react-icons/ai";
-// import SubMenu from "./components/SubMenu";
-import { SidebarData } from "./SidebarData";
+import * as RiIcons from "react-icons/ri";
 
 function NavBar() {
   const [sidebar, setSidebar] = useState(false);
   const showSidebar = () => setSidebar(!sidebar);
-  const [activeUl, setActiveUl] = useState(false);
-  const showUl = () => setActiveUl(!activeUl);
+  const [menu, setMenuActive] = useState(SidebarData);
+  function setMenu(id) {
+    setMenuActive(
+      menu.map((item, index) => {
+        if (index === id) {
+          item.active = !item.active;
+        }
+        return item;
+      })
+    );
+  }
   return (
     <>
       <div className="navbar"></div>
@@ -18,23 +27,21 @@ function NavBar() {
             <AiIcons.AiOutlineClose className="menu-bars" />
             {!sidebar && <FaIcons.FaBars className="menu-bars" />}
           </li>
-          {SidebarData.map((item, index) => {
+          {menu.map((item, index) => {
             return (
               <li
                 key={index}
-                onClick={showUl}
+                onClick={() => setMenu(index)}
                 className={
-                  // item.children ? item.cName + " have-children" : item.cName
                   "nav-text" +
                   (item.children ? " have-children" : "") +
                   (item.active ? " active" : "")
                 }
-                // onClick={item.children && showUl}
               >
                 <a>
                   <span>
                     {item.title}
-                    {item.arrow}
+                    {item.children && <RiIcons.RiArrowDownSLine />}
                   </span>
                   {item.icon}
                 </a>
