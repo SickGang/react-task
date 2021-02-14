@@ -1,0 +1,60 @@
+import React from "react";
+
+export const TableData = [
+  {
+    platform: "А",
+    maker: "1",
+    divices: 1,
+    divicesActive: 2,
+    activeNotInUse: 3,
+    noActive: 1,
+  },
+  {
+    platform: "Д",
+    maker: "1",
+    divices: 12,
+    divicesActive: 2,
+    activeNotInUse: 3,
+    noActive: 5,
+  },
+  {
+    platform: "Ж",
+    maker: "1",
+    divices: 2,
+    divicesActive: 2,
+    activeNotInUse: 3,
+    noActive: 5,
+  },
+  {
+    platform: "чмваы",
+    maker: "1",
+    divices: 2,
+    divicesActive: 2,
+    activeNotInUse: 3,
+    noActive: 51,
+  },
+  {
+    platform: "Б",
+    maker: "1",
+    divices: 2,
+    divicesActive: 2,
+    activeNotInUse: 15,
+    noActive: 512,
+  },
+  {
+    platform: "В",
+    maker: "1",
+    divices: 2,
+    divicesActive: 2,
+    activeNotInUse: 3,
+    noActive: 5,
+  },
+  {
+    platform: "Г",
+    maker: "1",
+    divices: 2,
+    divicesActive: 2,
+    activeNotInUse: 3,
+    noActive: 5,
+  },
+];
