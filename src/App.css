@@ -1,38 +1,114 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Roboto&family=Ubuntu:wght@500&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Ubuntu", sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.navbar {
+  background-color: #060b26;
+  height: 80px;
   display: flex;
-  flex-direction: column;
+  justify-content: start;
   align-items: center;
+}
+
+.menu-bars {
+  margin-left: .5rem;
+  font-size: 2rem;
+  background: none;
+}
+
+.nav-menu {
+  background-color: #060b26;
+  width: 250px;
+  height: 100vh;
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  position: fixed;
+  top: 0;
+  left: -180px;
+  transition: .3s;
+}
+
+.nav-menu.active {
+  left: 0;
+  transition: .3s;
+}
+
+.nav-text {
+  /* display: flex; */
+  /* justify-content: start; */
+  /* align-items: center; */
+  padding: 8px 0px 8px 16px;
+  list-style: none;
+  /* height: 60px; */
+}
+
+.nav-text a {
+  text-decoration: none;
   color: white;
+  font-size: 18px;
+  width: 95%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 16px;
+  border-radius: 4px;
+  cursor: pointer;
 }
 
-.App-link {
-  color: #61dafb;
+.nav-text a:hover {
+  background-color: #1a83ff;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.nav-menu-items {
+  width: 100%;
+}
+
+.navbar-toggle {
+  background-color: #060b26;
+  width: 100%;
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  cursor: pointer;
+  padding: 20px;
+}
+
+span {
+  margin-right: 16px;
+  display: flex;
+  align-items: flex-end;
+}
+
+a.active span svg {
+  transform: scaleY(-1);
+  transition: .4s;
+}
+
+li.have-children ul {
+	padding: 0px;
+} 
+li.have-children, li {
+	position: relative;
+}
+.have-children > ul {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  -moz-transition: opacity .3s, max-height .3s;
+  -ms-transition: opacity .3s, max-height .3s;
+  transition: opacity .3s, max-height .3s;
+  _display: none;
+}
+li.have-children.active > ul {
+  max-height: 300px;
+  opacity: 1;
+  _display: block;
 }
