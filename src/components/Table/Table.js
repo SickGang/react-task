@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import TableRow from "./TableRow";
 import { TableData } from "./TableData";
+import * as BsIcons from "react-icons/bs";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function Table() {
@@ -31,11 +32,18 @@ function Table() {
     },
   ];
   const [tableRow, setTableData] = useState(TableData);
+  const [sortBy, setSortBy] = useState({ state: false, field: "" });
   function sort(id) {
     tableRow.sort((prev, next) => {
-      if (prev[id] < next[id]) return -1;
-      if (prev[id] < next[id]) return 1;
+      if (sortBy.state) {
+        if (prev[id] < next[id]) return 1;
+        if (prev[id] > next[id]) return -1;
+      } else {
+        if (prev[id] < next[id]) return -1;
+        if (prev[id] < next[id]) return 1;
+      }
     });
+    setSortBy({ state: !sortBy.state, field: id });
     setTableData([...tableRow]);
   }
 
@@ -49,6 +57,11 @@ function Table() {
                 return (
                   <th scope="col" onClick={() => sort(head.sort)} key={index}>
                     {head.title}
+                    {sortBy.state && sortBy.field == head.sort ? (
+                      <BsIcons.BsArrowDown />
+                    ) : (
+                      <BsIcons.BsArrowUp />
+                    )}
                   </th>
                 );
               })}

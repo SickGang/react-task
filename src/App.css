@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto&family=Ubuntu:wght@500&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto&family=Ubuntu:wght@500&display=swap");
 
 * {
   box-sizing: border-box;
@@ -17,7 +17,7 @@
 }
 
 .menu-bars {
-  margin-left: .5rem;
+  margin-left: 0.5rem;
   font-size: 2rem;
   background: none;
 }
@@ -31,12 +31,12 @@
   position: fixed;
   top: 0;
   left: -180px;
-  transition: .3s;
+  transition: 0.3s;
 }
 
 .nav-menu.active {
   left: 0;
-  transition: .3s;
+  transition: 0.3s;
 }
 
 .nav-text {
@@ -86,27 +86,28 @@ span {
 
 li.active a span svg {
   transform: rotate(-180deg);
-  transition: .4s;
+  transition: 0.4s;
 }
 
 li a span svg {
   transform: rotate(0deg);
-  transition: .4s;
+  transition: 0.4s;
 }
 
 li.have-children ul {
-	padding: 0px;
-} 
-li.have-children, li {
-	position: relative;
+  padding: 0px;
+}
+li.have-children,
+li {
+  position: relative;
 }
 .have-children > ul {
   opacity: 0;
   max-height: 0;
   overflow: hidden;
-  -moz-transition: opacity .3s, max-height .3s;
-  -ms-transition: opacity .3s, max-height .3s;
-  transition: opacity .3s, max-height .3s;
+  -moz-transition: opacity 0.3s, max-height 0.3s;
+  -ms-transition: opacity 0.3s, max-height 0.3s;
+  transition: opacity 0.3s, max-height 0.3s;
   _display: none;
 }
 li.have-children.active > ul {
@@ -121,9 +122,14 @@ li.have-children li a {
 }
 
 .table {
-  margin-top: 100px;
+  margin-top: 150px;
 }
 
 th {
   cursor: pointer;
+}
+
+thead th:hover {
+  color: #fff;
+  background-color: rgba(255, 255, 255, 0.075);
 }
